@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', Welcome::class);
+Route::get('/dashboard', fn () => 'dashboard')->name('dashboard');
