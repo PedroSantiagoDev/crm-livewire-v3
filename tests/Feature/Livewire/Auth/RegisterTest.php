@@ -1,6 +1,7 @@
 <?php
 
 use App\Livewire\Auth\Register;
+use App\Models\User;
 use Livewire\Livewire;
 
 it('should renders the component', function () {
@@ -23,6 +24,10 @@ it('should be able to register a new user in the system', function () {
     ]);
 
     $this->assertDatabaseCount('users', 1);
+
+    expect(auth()->check())
+        ->and(auth()->user())
+        ->id->toBe(User::first()->id);
 });
 
 test('validation rules', function ($f) {
