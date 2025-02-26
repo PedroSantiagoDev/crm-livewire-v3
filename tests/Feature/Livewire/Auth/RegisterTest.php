@@ -19,7 +19,7 @@ it('should be able to register a new user in the system', function () {
         ->set('password', 'password')
         ->call('submit')
     ->assertHasNoErrors()
-    ->assertRedirect('dashboard');
+    ->assertRedirect(route('dashboard'));
 
     $this->assertDatabaseHas('users', [
         'name'  => 'Joe doe',
