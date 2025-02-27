@@ -14,6 +14,8 @@
         <x-input label="Password" wire:model="password" type="password" />
 
         <x-slot:actions>
+            <x-button wire:navigate label="Register" link="{{ route('auth.register') }}" no-wire-navigate
+                class="btn-ghost" />
             <x-button label="Login" class="btn-primary" type="submit" spinner="submit" />
         </x-slot:actions>
     </x-form>
