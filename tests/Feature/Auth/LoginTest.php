@@ -36,8 +36,6 @@ it('should make sure to inform the user an error when email and password doesnt 
 });
 
 it('should make sure that the rate limiting is blocking after 5 attempts', function () {
-    $user = User::factory()->create();
-
     for ($i = 0; $i < 5; $i++) {
         Livewire::test(Login::class)
             ->set('email', 'joe@doe.com')
